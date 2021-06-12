@@ -1,0 +1,10 @@
+.profile-image img{
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+body{
+    background-color: blueviolet;
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+   Sign Up
+{% endblock%}
+
+{% block content%}
+<link rel="stylesheet" href="{% static 'css/sign_up.css'%}">
+<div class="row justify-content-end ">
+    <div class="col-5 quote-cell">
+        <h1>Connect with your friends & family!</h1><br>&nbsp;&nbsp;&nbsp;<h3>Sign Up for a new account</h3>
+    </div>
+    <div class="col-5 form-cell">
+        <form action="{% url 'register_submit'%}" method="POST">{% csrf_token %}
+            <input type="text" name="name" id="name" placeholder="First Name">
+            <input type="text" name="surname" id="surname" placeholder="Last Name"><br><br>
+            <input type="text" name="username" id="username" placeholder="Enter Username"><br><br>
+            <input type="email" name="email" id="email" placeholder="Enter your E-mail"><br><br>
+            <input type="password" name="pass1" id="pass1" placeholder="Set Password"><br><br>
+            <input type="password" name="pass2" id="pass2" placeholder="Confirm Password"><br><br>
+            <h6>Gender</h6>
+            <input type="radio" name="gender" id="gender" value="Male">&nbsp;<label for="Male">Male</label>&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" id="gender" value="Female">&nbsp;<label for="Female">Female</label>&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" id="gender" value="Others">&nbsp;<label for="Others">Others</label>&nbsp;&nbsp;&nbsp;<br><br>
+            <h6>Date of Birth</h6>
+            <input type="date" name="dob" id="dob"><br><br>
+            <button type="submit">Sign Up</button>
+
+
+
+        </form>
+    </div>
+</div>
+    
+
+
+
+{% endblock %}

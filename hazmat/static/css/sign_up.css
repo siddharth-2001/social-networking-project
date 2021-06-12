@@ -1,0 +1,64 @@
+.form-cell{
+    border-radius: 50px;
+    margin: 50px;
+    margin-top: 105px;
+    background-image: url('');
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding: 35px;
+    text-align: center;
+}
+.quote-cell{
+    
+    margin: 50px;
+    margin-top: 85px;
+    padding: 35px;
+    font-family: 'DotGothic16', sans-serif;
+
+}
+
+body{
+     background-image: url('https://cdn.discordapp.com/attachments/769237012821180448/817768166708346890/GGez.jpg');
+}
+input{
+    outline: none;
+    padding: 10px;
+    border-color: #34F5C5;
+    border-radius: 35px;
+}
+#name{
+    width: 250px;
+    height: 50px;
+    
+}
+input:focus{
+    box-shadow:0 0 3pt 1pt #21D0B2;
+}
+#surname{
+    width: 250px;
+    height: 50px;
+}
+#email{
+    width: 505px;
+    height: 50px;
+}
+#pass1{
+    width: 505px;
+    height: 50px;
+}
+#pass2{
+    width: 505px;
+    height: 50px;
+}
+#username{
+    width:505px;
+    height: 50px;
+}
+
+button{
+    border-radius: 35px;
+    outline: none;
+    height: 50px;
+    width: 100px;
+    background-color: #21D0B2 ;
+    border: none;
+}

@@ -1,3 +1,14 @@
 from django.shortcuts import render
+from users.models import CustomUser
+from .models import Profile
 
-# Create your views here.
+def profile_page_view(request, username):
+    user = CustomUser.objects.get(username=username)
+    profile = Profile.objects.get(user=user)
+    posts = user.post_set.all()
+    print(posts)
+    context = {
+        'profile' : profile,
+        'posts'   : posts
+    }
+    return render(request, 'profile.html', context)
