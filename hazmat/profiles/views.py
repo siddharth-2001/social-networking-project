@@ -6,9 +6,8 @@ def profile_page_view(request, username):
     user = CustomUser.objects.get(username=username)
     profile = Profile.objects.get(user=user)
     posts = user.post_set.all()
-    print(posts)
     context = {
         'profile' : profile,
-        'posts'   : posts
+        'posts'   : posts,
     }
     return render(request, 'profile.html', context)

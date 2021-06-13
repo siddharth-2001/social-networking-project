@@ -1,10 +1,35 @@
-.profile-image img{
-    max-width: 80%;
-    height: auto;
-    border-radius: 50%;
+body {
+  
 }
 
+.name{
+  text-align: center;
+  margin: 50px;
+}
 
-body{
-    background-color: blueviolet;
+.user-info{
+  margin: 50px;
+}
+
+.profile-image img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.post-row{
+    text-align: center;
+    margin: 50px;
+
+ 
+}
+
+.post img {
+  border-radius: 50px;
+  width: 300px;
+  height: 300px;
+  object-position: center center;
+  object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }

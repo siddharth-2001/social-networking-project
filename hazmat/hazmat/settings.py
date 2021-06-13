@@ -129,6 +129,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'dist')
 
 AUTH_USER_MODEL = 'users.CustomUser'
 

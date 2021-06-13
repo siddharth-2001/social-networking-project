@@ -9,30 +9,41 @@
 
 {% block content%}
 <link rel="stylesheet" href="{% static 'css/profile.css'%}">
-<div class="row">
-    <div class="col-6 profile-image">
+<div class="name">
+    <h1>
+        {{profile.user.first_name}} {{profile.user.last_name}} (  {{profile.user.username}} )
+    </h1>
+</div>
+<div class="row user-info">
+    <div class="col-4 profile-image mx-4">
           <img src="{{profile.profile_image.url}}" alt="">
     </div>
-    <div class="col-6">
-        <h1>{{profile.user.username}}</h1>
-
+    <div class="col-6 profile-data">
+        <div class="row g-5">
+            <div class="col-4">
+                <h4>Followers</h4>
+                <h5>{{profile.followers_count}}</h5>
+            </div>
+            <div class="col-4">
+                <h4>Following</h4>
+                <h5>{{profile.following_count}}</h5>
+            </div>
+            <div class="col-4">
+                <h4>Posts</h4>
+                <h5></h5>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Follow</button>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-4">
-        <h1>Followers</h1>
-        <h3>{{profile.followers_count}}</h3>
+<div class="row g-5 post-row" >
+  {% for a in posts %}
+  <div class="col-3">
+    <div class="post">
+      <img src="{{a.image.url}}" class="card-img-top" alt="...">
     </div>
-    <div class="col-4">
-        <h1>Following</h1>
-        <h3>{{profile.following_count}}</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col-4">
-        {%for a in posts%}
-        <img src="{{a.image.url}}" alt="">
-        {%endfor%}
-    </div>
-</div>
+  </div>
+  {% endfor %}
 {% endblock%}
