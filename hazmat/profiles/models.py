@@ -9,7 +9,8 @@ class Profile(models.Model):
     followers       = models.ManyToManyField(CustomUser, related_name='followers')
     following       = models.ManyToManyField(CustomUser, related_name='following')
     profile_image   = models.ImageField(default='none', upload_to='posts')
-    private         = models.BooleanField(default=False)    
+    private         = models.BooleanField(default=False)
+    post_count      = models.PositiveIntegerField(default=0)    
                                                                             
     def __str__(self):
         return self.user.username
