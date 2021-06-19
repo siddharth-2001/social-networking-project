@@ -81,16 +81,12 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
+            <form class="d-flex" method="POST" action="{% url 'search' %}" >{% csrf_token %}
+              <input class="form-control me-2" type="search" id="search_user" name="search_user" placeholder="Search User"  aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
           </ul>
+          
           <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
             {% if user.is_authenticated %}
             <li class="nav-item">
@@ -102,6 +98,7 @@
                 >{{user.username}}</a
               >
             </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout'%}">Logout</a>
             </li>

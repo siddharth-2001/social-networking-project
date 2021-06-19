@@ -3,12 +3,16 @@ from users.models import CustomUser
 from .models import Profile
 
 def profile_page_view(request, username):
+    current_user = request.user
     user = CustomUser.objects.get(username=username)
     profile = Profile.objects.get(user=user)
+    if current_user in profile.followers.all():
+        check = True
     posts = user.post_set.all()
     context = {
         'profile' : profile,
         'posts'   : posts,
+        'check'   : check,
     }
     return render(request, 'profile.html', context)
 

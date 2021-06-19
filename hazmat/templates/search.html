@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title %}
+{{ to_search }}
+{% endblock%}
+
+
+{% block content %}
+  
+{% for a in found_users %}
+
+<a href="{% url 'profile' a.username%}">
+<h1>{{a.username}}</h1>
+</a>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{a.profile.profile_image.url}}" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ a.username }}</h5>
+          <h6>{{ a.first_name }} {{ a.last_name }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

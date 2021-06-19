@@ -3,8 +3,6 @@ from .models import CustomUser
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 from profiles.models import Profile
-# Create your views here.
-
 
 def create_user_view(request):  # make new view to create user
     name = request.POST.get('name')
@@ -52,3 +50,13 @@ def login_page_view(request):
         'message': 'Incorrect username or password.'
     }
     return render(request, 'registration/login.html', context)
+
+def search_user_view(request):
+    to_search = request.POST.get('search_user')
+    found_user = CustomUser.objects.filter(username = to_search)
+    print(found_user)
+    context = {
+        'search_user' : to_search,
+        'found_users'  : found_user,
+    }
+    return render(request, 'search.html', context)
