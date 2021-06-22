@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'profiles.apps.ProfilesConfig',
     'pages.apps.PagesConfig',
     'crispy_forms',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
